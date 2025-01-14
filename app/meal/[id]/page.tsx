@@ -1,6 +1,21 @@
 "use client;";
 
+import ButtonBack from "@/components/ui/ButtonBack";
 import Image from "next/image";
+
+export const revalidate = 60; // Régénération ISR toutes les 60 secondes
+
+export async function generateStaticParams() {
+  const response = await fetch(
+    `https://www.themealdb.com/api/json/v1/1/search.php?f=a`
+  );
+  const data = await response.json();
+
+  const meals = data.meals || [];
+  return meals.map((meal: { idMeal: string }) => ({
+    id: meal.idMeal,
+  }));
+}
 
 export default async function MealDetails({
   params,
@@ -43,6 +58,7 @@ export default async function MealDetails({
             </li>
           ))}
       </ul>
+      <ButtonBack />
     </div>
   );
 }
