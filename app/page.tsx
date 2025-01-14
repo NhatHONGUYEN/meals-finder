@@ -5,6 +5,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { Meals } from "../types/Meals";
 import { Input } from "@/components/ui/input";
+import Link from "next/link";
 
 export default function Home() {
   const [query, setQuery] = useState("Beef"); // État pour la recherche
@@ -56,28 +57,30 @@ export default function Home() {
         <div className="grid grid-cols-3 gap-20">
           {meals.map((meal: Meals) => (
             <article className="group " key={meal.idMeal}>
-              <Image
-                width={500}
-                height={200}
-                src={meal.strMealThumb}
-                alt={meal.strMeal}
-                className="h-56 w-full rounded-xl object-cover shadow-xl transition group-hover:grayscale-[50%]"
-              />
+              <Link href={`/meal/${meal.idMeal}`}>
+                <Image
+                  width={500}
+                  height={200}
+                  src={meal.strMealThumb}
+                  alt={meal.strMeal}
+                  className="h-56 w-full rounded-xl object-cover shadow-xl transition group-hover:grayscale-[50%]"
+                />
 
-              <div className="p-4">
-                <h3 className="text-lg font-medium text-gray-900">
-                  {meal.strMeal}
-                </h3>
+                <div className="p-4">
+                  <h3 className="text-lg font-medium text-gray-900">
+                    {meal.strMeal}
+                  </h3>
 
-                <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Recusandae dolores, possimus pariatur animi temporibus
-                  nesciunt praesentium dolore sed nulla ipsum eveniet corporis
-                  quidem, mollitia itaque minus soluta, voluptates neque
-                  explicabo tempora nisi culpa eius atque dignissimos. Molestias
-                  explicabo corporis voluptatem?
-                </p>
-              </div>
+                  <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Recusandae dolores, possimus pariatur animi temporibus
+                    nesciunt praesentium dolore sed nulla ipsum eveniet corporis
+                    quidem, mollitia itaque minus soluta, voluptates neque
+                    explicabo tempora nisi culpa eius atque dignissimos.
+                    Molestias explicabo corporis voluptatem?
+                  </p>
+                </div>
+              </Link>
             </article>
           ))}
         </div>
