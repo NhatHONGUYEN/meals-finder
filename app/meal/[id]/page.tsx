@@ -66,13 +66,13 @@ export default async function MealDetails({
               <Image
                 src={meal.strMealThumb}
                 alt={meal.strMeal}
-                className="h-full w-full object-cover"
-                width={200}
+                className="max-w-xl object-cover rounded-lg shadow-md"
+                width={300}
                 height={200}
               />
             </div>
             <h1 className=" pt-10 text-4xl font-semibold">{meal.strMeal}</h1>
-            <p className=" max-w-xl py-4 text-sm text-muted-foreground">
+            <p className=" max-w-lg py-4 text-sm text-muted-foreground">
               {meal.strInstructions}
             </p>
 
