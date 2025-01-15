@@ -17,7 +17,7 @@ export const CustomPagination = ({
   setPage: React.Dispatch<React.SetStateAction<number>>;
 }) => {
   return (
-    <Pagination className="py-10">
+    <Pagination className="py-32">
       <PaginationContent>
         <PaginationItem>
           <PaginationPrevious
