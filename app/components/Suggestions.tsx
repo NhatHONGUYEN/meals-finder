@@ -1,12 +1,6 @@
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import Image from "next/image";
+
+import Link from "next/link";
 import { Meals } from "../../types/Meals";
 
 export default async function Suggestions() {
@@ -18,38 +12,32 @@ export default async function Suggestions() {
   const meals = data.meals || [];
 
   return (
-    <div className="w-full">
-      <Carousel
-        opts={{
-          align: "start",
-          slidesToShow: 3, // Show 3 items at a time
-        }}
-        className="w-full max-w-5xl  mx-auto pt-40"
-      >
-        <CarouselContent>
-          {meals.map((meal: Meals) => (
-            <CarouselItem
-              key={meal.idMeal}
-              className="md:basis-1/3 lg:basis-1/3 p-2"
-            >
-              <Card className="shadow-lg">
-                <CardContent className="flex flex-col items-center justify-center">
-                  <Image
-                    src={meal.strMealThumb}
-                    alt={meal.strMeal}
-                    className="rounded-lg"
-                    width={300}
-                    height={200}
-                  />
-                  <h3 className="mt-4 text-lg font-bold">{meal.strMeal}</h3>
-                </CardContent>
-              </Card>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
+    <div className="w-full max-w-5xl mx-auto pt-20">
+      {/* Container flex pour afficher 4 cartes */}
+      <h1 className="text-4xl mt-10 font-bold">Suggestions</h1>
+      <div className="grid py-10 grid-cols-3 gap-20">
+        {meals.slice(0, 3).map((meal: Meals) => (
+          <article className="group" key={meal.idMeal}>
+            <Link href={`/meal/${meal.idMeal}`}>
+              <Image
+                width={500}
+                height={200}
+                src={meal.strMealThumb}
+                alt={meal.strMeal}
+                className="h-56 w-full rounded-xl object-cover shadow-xl transition group-hover:grayscale-[50%]"
+              />
+              <div className="p-4">
+                <h3 className="text-lg font-medium text-gray-900">
+                  {meal.strMeal}
+                </h3>
+                <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
+                  {meal.strInstructions}
+                </p>
+              </div>
+            </Link>
+          </article>
+        ))}
+      </div>
     </div>
   );
 }
