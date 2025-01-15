@@ -25,7 +25,11 @@ export function InfiniteSliderBasic() {
   };
 
   return (
-    <InfiniteSlider className="bg-accent/50" gap={70} reverse>
+    <InfiniteSlider
+      className="bg-accent/50 w-full rounded-3xl"
+      gap={70}
+      reverse
+    >
       {dishes.map((dish, index) => (
         <div
           key={index}
