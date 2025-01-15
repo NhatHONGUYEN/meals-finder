@@ -42,7 +42,7 @@ export default async function MealDetails({
         <div className="relative flex flex-col justify-between gap-10 lg:flex-row">
           <aside className="top-10 mx-auto h-fit w-full max-w-[65ch] lg:sticky lg:max-w-96">
             <ButtonBack />
-            <h1 className=" py-4 text-balance text-3xl font-bold lg:text-4xl">
+            <h1 className=" text-4xl font-semibold tracking-tight text-pretty text-gray-900 ">
               The best way to cook {meal.strMeal}
             </h1>
             <div className="flex gap-3">
@@ -72,14 +72,16 @@ export default async function MealDetails({
                 height={200}
               />
             </div>
-            <h1 className=" pt-10 text-4xl font-semibold">{meal.strMeal}</h1>
-            <p className=" max-w-lg py-10  text-muted-foreground">
+            <h1 className="text-4xl pt-10 font-semibold tracking-tight text-pretty text-gray-900">
+              {meal.strMeal}
+            </h1>
+            <p className=" max-w-lg  pt-4 text-base/7 text-muted-foreground">
               {meal.strInstructions}
             </p>
 
-            <h1 className="py-10 text-4xl font-semibold ">Ingredients</h1>
+            <h1 className="pt-10 text-4xl font-semibold ">Ingredients</h1>
 
-            <ul className="list-disc list-inside grid grid-cols-2 gap-2">
+            <ul className="list-disc pt-4  list-inside grid grid-cols-2 gap-2">
               {Array.from({ length: 20 }, (_, i) => i + 1)
                 .map((i) => ({
                   ingredient: meal[`strIngredient${i}`],
@@ -87,7 +89,10 @@ export default async function MealDetails({
                 }))
                 .filter((item) => item.ingredient) // Filtrer les ingrédients non définis
                 .map((item, index) => (
-                  <li className="text-muted-foreground" key={index}>
+                  <li
+                    className="text-muted-foreground  text-base/7"
+                    key={index}
+                  >
                     {item.ingredient} - {item.measure}
                   </li>
                 ))}
