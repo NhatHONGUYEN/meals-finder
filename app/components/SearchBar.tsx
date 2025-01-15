@@ -44,7 +44,7 @@ export const SearchBar = ({
               instantly.
             </p>
           </div>
-          <div className="max-w-xl mx-auto py-10">
+          <div className="max-w-xs md:max-w-xl mx-auto py-10">
             <Input
               placeholder="Search recipes..."
               value={searchInput}

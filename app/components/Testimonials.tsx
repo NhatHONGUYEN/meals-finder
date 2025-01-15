@@ -55,7 +55,7 @@ const Testimonials = () => {
   return (
     <section className="py-32 ">
       <div className="container">
-        <Carousel className="w-full">
+        <Carousel className="w-60 sm:max-w-4xl lg:w-full">
           <div className="mb-8 flex justify-between px-1 lg:mb-12">
             <h2 className="text-2xl font-semibold lg:text-5xl">Meals Addict</h2>
             <div className="flex items-center space-x-2">

@@ -8,7 +8,7 @@ export const MealGrid = ({ meals }: { meals: Meals[] }) => {
   }
 
   return (
-    <div className="grid grid-cols-3 gap-20">
+    <div className="grid  md:grid-cols-2 mx-20 xl:mx-0 xl:grid-cols-3 gap-20">
       {meals.map((meal) => (
         <article className="group" key={meal.idMeal}>
           <Link href={`/meal/${meal.idMeal}`}>
