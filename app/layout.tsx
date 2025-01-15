@@ -3,6 +3,7 @@ import { Bitter, Dosis } from "next/font/google";
 
 import "./globals.css";
 import QueryProvider from "@/lib/QueryProvider";
+import Header from "./components/Header";
 
 const dosis = Dosis({ subsets: ["latin"] });
 const bitter = Bitter({ subsets: ["latin"] });
@@ -20,7 +21,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${dosis.className} ${bitter.className} antialiased`}>
-        <QueryProvider> {children}</QueryProvider>
+        <QueryProvider>
+          <Header />
+          {children}
+        </QueryProvider>
       </body>
     </html>
   );
