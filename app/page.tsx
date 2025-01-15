@@ -11,6 +11,7 @@ import {
   RESULTS_PER_PAGE,
 } from "./constants/Constants";
 import Hero from "./components/Hero";
+import { InfiniteSliderBasic } from "./components/InfiniteSliderBasic";
 
 export default function Home() {
   const [query, setQuery] = useState(DEFAULT_QUERY);
@@ -47,6 +48,7 @@ export default function Home() {
         currentPage={page}
         setPage={setPage}
       />
+      <InfiniteSliderBasic />
     </div>
   );
 }
