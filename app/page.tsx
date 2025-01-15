@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <div className="max-w-6xl mx-auto h-full flex flex-col items-center justify-center">
       <Hero />
-      <h1 className="text-4xl mt-10 font-bold">Meals</h1>
+
       <SearchBar
         searchInput={searchInput}
         setSearchInput={setSearchInput}
