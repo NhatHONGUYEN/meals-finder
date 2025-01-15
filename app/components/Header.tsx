@@ -18,7 +18,7 @@ const Header = () => {
                 About
               </Link>
 
-              <Link href="#" className="font-medium">
+              <Link href="/contact" className="font-medium">
                 Contact
               </Link>
             </div>
