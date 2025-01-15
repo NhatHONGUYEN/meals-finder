@@ -49,7 +49,7 @@ const navigation: Navigation = {
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 rounded-3xl w-full">
+    <footer className="bg-gray-900 rounded-3xl max-w-6xl mx-auto ">
       <div className="py-10 w-full ">
         <nav
           aria-label="Footer"

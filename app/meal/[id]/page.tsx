@@ -73,13 +73,13 @@ export default async function MealDetails({
               />
             </div>
             <h1 className=" pt-10 text-4xl font-semibold">{meal.strMeal}</h1>
-            <p className=" max-w-lg py-4 text-sm text-muted-foreground">
+            <p className=" max-w-lg py-10  text-muted-foreground">
               {meal.strInstructions}
             </p>
 
-            <h1 className="py-4 text-4xl font-semibold ">Ingredients</h1>
+            <h1 className="py-10 text-4xl font-semibold ">Ingredients</h1>
 
-            <ul className="list-disc list-inside">
+            <ul className="list-disc list-inside grid grid-cols-2 gap-2">
               {Array.from({ length: 20 }, (_, i) => i + 1)
                 .map((i) => ({
                   ingredient: meal[`strIngredient${i}`],
@@ -87,7 +87,7 @@ export default async function MealDetails({
                 }))
                 .filter((item) => item.ingredient) // Filtrer les ingrédients non définis
                 .map((item, index) => (
-                  <li className="text-sm text-muted-foreground" key={index}>
+                  <li className="text-muted-foreground" key={index}>
                     {item.ingredient} - {item.measure}
                   </li>
                 ))}
