@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -25,9 +26,11 @@ const Hero = () => {
                   <ArrowRight className="mr-2 size-4" />
                   Explore Recipes
                 </Button>
-                <Button variant="outline" className="w-full sm:w-auto">
-                  Learn More
-                </Button>
+                <Link href="/about">
+                  <Button variant="outline" className="w-full sm:w-auto">
+                    Learn More
+                  </Button>
+                </Link>
               </div>
             </div>
 

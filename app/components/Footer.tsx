@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 interface NavigationItem {
   name: string;
   href: string;
@@ -14,13 +16,13 @@ interface Navigation {
 
 const navigation: Navigation = {
   main: [
-    { name: "About", href: "#" },
-    { name: "Contact", href: "#" },
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
   ],
   social: [
     {
       name: "Instagram",
-      href: "#",
+      href: "https://www.instagram.com/nhatflux/",
       icon: (props) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -33,7 +35,7 @@ const navigation: Navigation = {
     },
     {
       name: "GitHub",
-      href: "#",
+      href: "https://github.com/NhatHONGUYEN",
       icon: (props) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -56,25 +58,27 @@ export default function Footer() {
           className="-mb-6 flex flex-wrap justify-center gap-x-12 gap-y-3 "
         >
           {navigation.main.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={item.href}
               className="text-gray-400 hover:text-white"
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </nav>
         <div className="mt-16 flex justify-center gap-x-10">
           {navigation.social.map((item) => (
-            <a
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
               key={item.name}
               href={item.href}
               className="text-gray-400 hover:text-gray-300"
             >
               <span className="sr-only">{item.name}</span>
               <item.icon aria-hidden="true" className="size-6" />
-            </a>
+            </Link>
           ))}
         </div>
         <p className="mt-10 text-center text-sm/6 text-gray-400">
