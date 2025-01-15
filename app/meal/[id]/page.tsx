@@ -64,11 +64,11 @@ export default async function MealDetails({
           <article className="prose mx-auto">
             <div>
               <Image
-                width={400}
-                height={300}
                 src={meal.strMealThumb}
                 alt={meal.strMeal}
-                className="rounded-lg shadow-md"
+                className="h-full w-full object-cover"
+                width={200}
+                height={200}
               />
             </div>
             <h1 className=" pt-10 text-4xl font-semibold">{meal.strMeal}</h1>

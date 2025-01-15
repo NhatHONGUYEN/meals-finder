@@ -16,6 +16,7 @@ export default function Home() {
   const [query, setQuery] = useState(DEFAULT_QUERY);
   const [searchInput, setSearchInput] = useState("");
   const [page, setPage] = useState(INITIAL_PAGE);
+  const [showHero, setShowHero] = useState(true); // État pour contrôler l'affichage du Hero
 
   const { data, isLoading, isError } = useMeals(query, page, RESULTS_PER_PAGE);
 
@@ -27,6 +28,7 @@ export default function Home() {
     setQuery(searchInput);
     setPage(INITIAL_PAGE);
     setSearchInput("");
+    setShowHero(true); // Réaffiche le Hero après une recherche
   };
 
   if (isLoading) return <div>Loading...</div>;
@@ -34,7 +36,8 @@ export default function Home() {
 
   return (
     <div className="max-w-6xl mx-auto h-full flex flex-col items-center justify-center">
-      <Hero />
+      {/* Héros visible uniquement si showHero est true */}
+      {showHero && <Hero />}
       <h1 className="text-4xl mt-10 font-bold">Meals</h1>
       <SearchBar
         searchInput={searchInput}
@@ -45,7 +48,10 @@ export default function Home() {
       <CustomPagination
         totalPages={totalPages}
         currentPage={page}
-        setPage={setPage}
+        setPage={(newPage) => {
+          setPage(newPage);
+          setShowHero(newPage === INITIAL_PAGE); // Masque le Hero si ce n'est pas la première page
+        }}
       />
     </div>
   );
