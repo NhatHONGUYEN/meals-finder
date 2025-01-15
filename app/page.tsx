@@ -13,6 +13,7 @@ import {
 import Hero from "./components/Hero";
 import { InfiniteSliderBasic } from "./components/InfiniteSliderBasic";
 import Testimonials from "./components/Testimonials";
+import Footer from "./components/Footer";
 
 export default function Home() {
   const [query, setQuery] = useState(DEFAULT_QUERY);
@@ -51,6 +52,7 @@ export default function Home() {
       />
       <InfiniteSliderBasic />
       <Testimonials />
+      <Footer />
     </div>
   );
 }
