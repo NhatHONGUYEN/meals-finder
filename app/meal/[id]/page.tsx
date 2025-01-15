@@ -18,6 +18,7 @@ export async function generateStaticParams() {
 }
 
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { VideoDialog } from "../../components/VideoDialog";
 
 export default async function MealDetails({
   params,
@@ -54,6 +55,9 @@ export default async function MealDetails({
                 <h2 className="font-semibold">Tony Lao</h2>
                 <p className="text-xs text-muted-foreground">2 days ago</p>
               </div>
+            </div>
+            <div className="pt-20">
+              <VideoDialog videoMeal={meal.strYoutube} />
             </div>
           </aside>
 
