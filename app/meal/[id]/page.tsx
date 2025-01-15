@@ -19,6 +19,7 @@ export async function generateStaticParams() {
 
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { VideoDialog } from "../../components/VideoDialog";
+import Suggestions from "../../components/Suggestions";
 
 export default async function MealDetails({
   params,
@@ -93,6 +94,7 @@ export default async function MealDetails({
             </ul>
           </article>
         </div>
+        <Suggestions />
       </div>
     </section>
   );
