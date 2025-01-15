@@ -1,12 +1,16 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { ChevronLeft } from "lucide-react";
+import Link from "next/link";
 
 export default function ButtonBack() {
-  const handleGoBack = () => {
-    // Utilise l'API `window.history.back()` pour revenir à la page précédente
-    window.history.back();
-  };
-
-  return <Button onClick={handleGoBack}>Go Back</Button>;
+  return (
+    <Link
+      className="mb-5 flex items-center gap-1 text-muted-foreground hover:text-primary"
+      href={"/"}
+    >
+      {" "}
+      <ChevronLeft className="h-full w-4" /> Return to home
+    </Link>
+  );
 }

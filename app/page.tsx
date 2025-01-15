@@ -124,6 +124,7 @@ export default function Home() {
             return (
               <PaginationItem key={pageNumber}>
                 <PaginationLink
+                  className="cursor-pointer" // Ajoute une classe "cursor-pointer" pour indiquer que c'est cliquable
                   onClick={(e) => {
                     e.preventDefault();
                     setPage(pageNumber); // Met à jour la page au clic
