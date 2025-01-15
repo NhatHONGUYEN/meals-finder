@@ -1,41 +1,30 @@
 "use client";
 
-import { useQuery } from "@tanstack/react-query";
 import React, { useState } from "react";
+import { useMeals } from "./hooks/useMeals";
 import { SearchBar } from "./components/SearchBar";
 import { MealGrid } from "./components/MealGrid";
 import { CustomPagination } from "./components/CustomPagination";
-
-const API_BASE_URL = "https://www.themealdb.com/api/json/v1/1/search.php";
+import {
+  DEFAULT_QUERY,
+  INITIAL_PAGE,
+  RESULTS_PER_PAGE,
+} from "./constants/Constants";
 
 export default function Home() {
-  const [query, setQuery] = useState("Beef");
+  const [query, setQuery] = useState(DEFAULT_QUERY);
   const [searchInput, setSearchInput] = useState("");
-  const [page, setPage] = useState(1);
-  const resultsPerPage = 9;
+  const [page, setPage] = useState(INITIAL_PAGE);
 
-  const offset = (page - 1) * resultsPerPage;
-
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ["meals", query, page],
-    queryFn: async () => {
-      const response = await fetch(`${API_BASE_URL}?s=${query}`);
-      const data = await response.json();
-      return {
-        meals: data.meals?.slice(offset, offset + resultsPerPage) || [],
-        totalResults: data.meals?.length || 0,
-      };
-    },
-    enabled: !!query,
-  });
+  const { data, isLoading, isError } = useMeals(query, page, RESULTS_PER_PAGE);
 
   const meals = data?.meals;
   const totalResults = data?.totalResults || 0;
-  const totalPages = Math.ceil(totalResults / resultsPerPage);
+  const totalPages = Math.ceil(totalResults / RESULTS_PER_PAGE);
 
   const handleSearch = () => {
     setQuery(searchInput);
-    setPage(1);
+    setPage(INITIAL_PAGE);
     setSearchInput("");
   };
 
