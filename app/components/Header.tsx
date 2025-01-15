@@ -14,7 +14,7 @@ const Header = () => {
               <span className="text-xl font-bold">Meals Finder</span>
             </Link>
             <div className="hidden lg:flex items-center gap-4">
-              <Link href="#" className="font-medium">
+              <Link href="/about" className="font-medium">
                 About
               </Link>
               <Link href="#" className="font-medium">
