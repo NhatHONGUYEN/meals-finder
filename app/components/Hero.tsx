@@ -2,7 +2,11 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-const Hero = () => {
+interface HeroProps {
+  scrollToSearchBar: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ scrollToSearchBar }) => {
   return (
     <section>
       <div className="container flex flex-col py-32 items-center">
@@ -22,7 +26,10 @@ const Hero = () => {
                 occasions.
               </p>
               <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
-                <Button className="w-full sm:w-auto">
+                <Button
+                  onClick={scrollToSearchBar}
+                  className="w-full sm:w-auto"
+                >
                   <ArrowRight className="mr-2 size-4" />
                   Explore Recipes
                 </Button>

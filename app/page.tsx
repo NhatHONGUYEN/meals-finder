@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useMeals } from "./hooks/useMeals";
 import { SearchBar } from "./components/SearchBar";
 import { MealGrid } from "./components/MealGrid";
@@ -25,6 +25,7 @@ export default function Home() {
   const meals = data?.meals;
   const totalResults = data?.totalResults || 0;
   const totalPages = Math.ceil(totalResults / RESULTS_PER_PAGE);
+  const searchBarRef = useRef<HTMLDivElement>(null);
 
   const handleSearch = () => {
     setQuery(searchInput);
@@ -38,19 +39,27 @@ export default function Home() {
     setShowHero(false); // Masquer Hero lorsqu'on change de page
   };
 
+  const scrollToSearchBar = () => {
+    if (searchBarRef.current) {
+      searchBarRef.current.scrollIntoView({ behavior: "smooth" }); // Scroll en douceur
+    }
+  };
+
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error loading meals.</div>;
 
   return (
     <div className="max-w-6xl mx-auto h-full flex flex-col items-center justify-center">
       {/* Affiche Hero uniquement si showHero est true */}
-      {showHero && <Hero />}
+      {showHero && <Hero scrollToSearchBar={scrollToSearchBar} />}
 
-      <SearchBar
-        searchInput={searchInput}
-        setSearchInput={setSearchInput}
-        onSearch={handleSearch}
-      />
+      <div ref={searchBarRef}>
+        <SearchBar
+          searchInput={searchInput}
+          setSearchInput={setSearchInput}
+          onSearch={handleSearch}
+        />
+      </div>
       <MealGrid meals={meals} />
       <CustomPagination
         totalPages={totalPages}
