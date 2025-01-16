@@ -15,7 +15,7 @@ export default async function Suggestions() {
     <div className="w-full max-w-5xl mx-auto pt-20">
       {/* Container flex pour afficher 4 cartes */}
       <h1 className="text-4xl mt-10 font-bold">Suggestions</h1>
-      <div className="grid py-10 grid-cols-3 gap-20">
+      <div className="grid py-10  md:grid-cols-2 xl:grid-cols-3 gap-20">
         {meals.slice(0, 3).map((meal: Meals) => (
           <article className="group" key={meal.idMeal}>
             <Link href={`/meal/${meal.idMeal}`}>

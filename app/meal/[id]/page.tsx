@@ -37,7 +37,7 @@ export default async function MealDetails({
   const meal = data.meals[0]; // Le détail du repas
 
   return (
-    <section className="max-w-6xl mx-auto py-32">
+    <section className="mx-8   max-w-6xl md:mx-32 xl:mx-auto py-32">
       <div className="container">
         <div className="relative flex flex-col justify-between gap-10 lg:flex-row">
           <aside className="top-10 mx-auto h-fit w-full max-w-[65ch] lg:sticky lg:max-w-96">
@@ -45,7 +45,7 @@ export default async function MealDetails({
             <h1 className=" text-4xl font-semibold tracking-tight text-pretty text-gray-900 ">
               The best way to cook {meal.strMeal}
             </h1>
-            <div className="flex gap-3">
+            <div className="flex pt-5 gap-3">
               <Avatar className="size-7 rounded-full">
                 <AvatarImage
                   src="https://shadcnblocks.com/images/block/avatar-2.webp"
