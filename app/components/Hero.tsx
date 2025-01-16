@@ -9,7 +9,7 @@ const Hero = () => {
         <div className="w-full overflow-clip rounded-lg bg-accent/50">
           <div className="grid items-center gap-8 lg:grid-cols-2">
             <div className="container flex flex-col items-center px-[4rem] py-32 text-center lg:mx-auto lg:items-start lg:px-[4rem] lg:text-left">
-              <p className="text-lg font-semibold text-primary">
+              <p className="text-base/7 font-semibold text-indigo-600">
                 Discover New Recipes
               </p>
               <h1 className="my-6 text-pretty text-5xl font-bold">
