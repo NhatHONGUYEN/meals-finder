@@ -18,6 +18,7 @@ export default function Home() {
   const [query, setQuery] = useState(DEFAULT_QUERY);
   const [searchInput, setSearchInput] = useState("");
   const [page, setPage] = useState(INITIAL_PAGE);
+  const [showHero, setShowHero] = useState(true); // Contrôle l'affichage de Hero
 
   const { data, isLoading, isError } = useMeals(query, page, RESULTS_PER_PAGE);
 
@@ -29,6 +30,12 @@ export default function Home() {
     setQuery(searchInput);
     setPage(INITIAL_PAGE);
     setSearchInput("");
+    setShowHero(false); // Masquer Hero lorsque la recherche est effectuée
+  };
+
+  const handlePageChange = (newPage: React.SetStateAction<number>) => {
+    setPage(newPage);
+    setShowHero(false); // Masquer Hero lorsqu'on change de page
   };
 
   if (isLoading) return <div>Loading...</div>;
@@ -36,7 +43,8 @@ export default function Home() {
 
   return (
     <div className="max-w-6xl mx-auto h-full flex flex-col items-center justify-center">
-      <Hero />
+      {/* Affiche Hero uniquement si showHero est true */}
+      {showHero && <Hero />}
 
       <SearchBar
         searchInput={searchInput}
@@ -47,7 +55,7 @@ export default function Home() {
       <CustomPagination
         totalPages={totalPages}
         currentPage={page}
-        setPage={setPage}
+        setPage={handlePageChange} // Appelle handlePageChange pour gérer la pagination
       />
       <InfiniteSliderBasic />
       <Testimonials />

@@ -15,7 +15,7 @@ export const SearchBar = ({
   };
 
   return (
-    <section className="py-20 ">
+    <section className="py-24 ">
       <div className="container">
         <div className="text-center">
           <div className="text-3xl font-bold md:text-5xl ">
