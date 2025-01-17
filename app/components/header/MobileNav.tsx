@@ -23,7 +23,7 @@ export default function MobileNav() {
         <SheetHeader>
           <SheetTitle className="text-center">Menu</SheetTitle>
         </SheetHeader>
-        <div className="grid gap-4 text-center py-10">
+        <div className="text-center py-10">
           <NavLinks />
         </div>
         <SheetFooter>

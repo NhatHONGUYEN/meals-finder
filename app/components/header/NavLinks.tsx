@@ -6,7 +6,7 @@ export default function NavLinks() {
     <nav aria-label="Main navigation">
       {" "}
       {/* Ajout d'une balise <nav> pour la sémantique */}
-      <ul className="flex space-x-6">
+      <ul className="block space-y-4 md:space-y-0 md:flex   md:space-x-6">
         {" "}
         {/* Utilisation d'une liste pour la structure */}
         {navLinks.map((link, index) => (

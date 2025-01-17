@@ -16,7 +16,7 @@ export default function Contact() {
       <section className="py-32 max-w-6xl overflow-clip rounded-lg bg-accent/50 mx-auto">
         <div className="container">
           <div className="mx-auto flex max-w-screen-xl flex-col justify-between gap-10 lg:flex-row lg:gap-20">
-            <div className="mx-auto flex max-w-sm flex-col justify-between gap-10">
+            <div className="mx-auto flex max-w-sm flex-col lg:py-14 justify-between gap-10">
               <ContactHeader />
               <ContactDetails />
             </div>
