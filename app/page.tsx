@@ -4,7 +4,7 @@ import React, { useRef, useState } from "react";
 import { useMeals } from "./hooks/useMeals";
 import { SearchBar } from "./components/SearchBar";
 import { MealGrid } from "./meal/MealGrid";
-import { CustomPagination } from "./components/pagination/CustomPagination";
+
 import {
   DEFAULT_QUERY,
   INITIAL_PAGE,
@@ -12,10 +12,11 @@ import {
 } from "./constants/Constants";
 
 import { InfiniteSliderBasic } from "../animations/InfiniteSliderBasic";
-import Testimonials from "./components/Testimonials";
+import Testimonials from "./components/testimonials/Testimonials";
 import LoadingDot from "@/components/ui/LoadingDot";
 import ErrorLoadingMeals from "./components/error/ErrorLoadingMeals";
 import Hero from "./components/hero/Hero";
+import CustomPagination from "./components/pagination/CustomPagination";
 
 export default function Home() {
   const [query, setQuery] = useState(DEFAULT_QUERY);
