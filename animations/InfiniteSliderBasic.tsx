@@ -1,5 +1,5 @@
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
-import { dishes, sizes } from "../data/data";
+import { dishes, sizes } from "../app/data/data";
 
 export function InfiniteSliderBasic() {
   const getRandomSize = () => {

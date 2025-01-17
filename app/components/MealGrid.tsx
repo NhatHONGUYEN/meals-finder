@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Meals } from "../../types/Meals";
-import Error from "./ErrorSearch";
+import Error from "./error/ErrorSearch";
 
 interface MealGridProps {
   meals: Meals[];

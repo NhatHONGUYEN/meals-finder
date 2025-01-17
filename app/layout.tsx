@@ -3,7 +3,7 @@ import { Bitter, Dosis } from "next/font/google";
 
 import "./globals.css";
 import QueryProvider from "@/lib/QueryProvider";
-import Header from "./components/Header";
+import Header from "./components/header/Header";
 import Footer from "./components/Footer";
 import { ScreenSize } from "./components/ScreenSize";
 

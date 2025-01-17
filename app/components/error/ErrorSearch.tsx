@@ -1,4 +1,4 @@
-import { suggestionError } from "../data/data";
+import { suggestionError } from "../../data/data";
 
 export default function Error() {
   return (

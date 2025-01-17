@@ -18,7 +18,7 @@ export async function generateStaticParams() {
 }
 
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { VideoDialog } from "../../components/VideoDialog";
+import { VideoDialog } from "../../../animations/VideoDialog";
 import Suggestions from "../../components/Suggestions";
 
 export default async function MealDetails({

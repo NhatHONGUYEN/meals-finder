@@ -11,10 +11,10 @@ import {
   RESULTS_PER_PAGE,
 } from "./constants/Constants";
 import Hero from "./components/Hero";
-import { InfiniteSliderBasic } from "./components/InfiniteSliderBasic";
+import { InfiniteSliderBasic } from "../animations/InfiniteSliderBasic";
 import Testimonials from "./components/Testimonials";
 import LoadingDot from "@/components/ui/LoadingDot";
-import ErrorLoadingMeals from "./components/ErrorLoadingMeals";
+import ErrorLoadingMeals from "./components/error/ErrorLoadingMeals";
 
 export default function Home() {
   const [query, setQuery] = useState(DEFAULT_QUERY);
