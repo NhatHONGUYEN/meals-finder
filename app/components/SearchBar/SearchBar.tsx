@@ -1,4 +1,3 @@
-import { avatars } from "../../data/data";
 import AvatarList from "./AvatarList";
 import SearchInput from "./SearchInput";
 
@@ -18,7 +17,7 @@ export default function SearchBar({
           <div className="text-3xl font-bold md:text-5xl">
             <p className="flex flex-wrap items-center justify-center">
               Find your next meal
-              <AvatarList avatars={avatars} />
+              <AvatarList />
               instantly.
             </p>
           </div>

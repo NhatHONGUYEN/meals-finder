@@ -43,21 +43,6 @@ export const testimonials = [
   },
 ];
 
-export const avatars = [
-  {
-    src: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM5MzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzY3NzQ4NzA&ixlib=rb-4.0.3&q=80&w=400",
-    alt: "Burger",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1513104890138-7c749659a591?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM5MzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzY3NzQ4NzA&ixlib=rb-4.0.3&q=80&w=400",
-    alt: "Pasta",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM5MzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzY3NzQ4NzA&ixlib=rb-4.0.3&q=80&w=400",
-    alt: "Sushi",
-  },
-];
-
 export const dishes = [
   "Spaghetti Carbonara",
   "Chicken Tikka Masala",
@@ -74,6 +59,25 @@ export const sizes = [
   "text-4xl",
   "text-5xl",
   "text-6xl",
+];
+
+import { MdFastfood } from "react-icons/md";
+import { FaBowlFood } from "react-icons/fa6";
+import { PiBowlFoodFill } from "react-icons/pi";
+
+export const avatars = [
+  {
+    icon: <MdFastfood aria-label="Burger" />,
+    alt: "Burger",
+  },
+  {
+    icon: <FaBowlFood aria-label="Pasta" />,
+    alt: "Pasta",
+  },
+  {
+    icon: <PiBowlFoodFill aria-label="Sushi" />,
+    alt: "Sushi",
+  },
 ];
 
 interface SocialItem {
