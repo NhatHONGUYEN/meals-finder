@@ -15,7 +15,7 @@ export default function HeroContent({ scrollToSearchBar }: HeroProps) {
       <h1 className="my-6 text-pretty text-5xl font-bold">
         Welcome to Our Recipe Website
       </h1>
-      <p className="mb-8 max-w-xl text-muted-foreground">
+      <p className="mb-8 text-muted-foreground">
         Explore a vast collection of delicious and easy-to-make recipes. Whether
         you&apos;re an experienced chef or a beginner in the kitchen,
         you&apos;ll find ideas here for all tastes and occasions.

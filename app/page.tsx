@@ -55,7 +55,7 @@ export default function Home() {
 
   return (
     <div>
-      <div className="max-w-6xl mx-auto h-full flex flex-col items-center justify-center">
+      <div className="w-full lg:max-w-6xl mx-auto h-full flex flex-col items-center justify-center">
         {/* Affiche Hero uniquement si showHero est true */}
         {showHero && <Hero scrollToSearchBar={scrollToSearchBar} />}
 

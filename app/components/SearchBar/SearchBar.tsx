@@ -1,5 +1,6 @@
-import AvatarList from "./AvatarList";
+import { MdFastfood } from "react-icons/md";
 import SearchInput from "./SearchInput";
+import { Avatar } from "@/components/ui/avatar";
 
 export default function SearchBar({
   searchInput,
@@ -17,7 +18,9 @@ export default function SearchBar({
           <div className="text-3xl font-bold md:text-5xl">
             <p className="flex flex-wrap items-center justify-center">
               Find your next meal
-              <AvatarList />
+              <Avatar className="mx-4 border-2 ">
+                <MdFastfood aria-label="Burger" />
+              </Avatar>
               instantly.
             </p>
           </div>
