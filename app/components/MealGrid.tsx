@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Meals } from "../../types/Meals";
+import Error from "./ErrorSearch";
 
 export const MealGrid = ({ meals }: { meals: Meals[] }) => {
   if (!meals || meals.length === 0) {
-    return <div>No meals found.</div>;
+    return <Error />;
   }
 
   return (
