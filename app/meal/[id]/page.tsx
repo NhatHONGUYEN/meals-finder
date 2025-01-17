@@ -6,11 +6,12 @@ import Suggestions from "./suggestions/Suggestions";
 export const revalidate = 60;
 
 // Générer des métadonnées dynamiques
-export async function generateMetadata({
-  params,
-}: {
-  params: { id: string };
-}): Promise<Metadata> {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ id: string }>;
+  }
+): Promise<Metadata> {
+  const params = await props.params;
   const meal = await getMealDetails(params.id);
 
   return {
@@ -21,11 +22,12 @@ export async function generateMetadata({
   };
 }
 
-export default async function MealDetails({
-  params,
-}: {
-  params: { id: string };
-}) {
+export default async function MealDetails(
+  props: {
+    params: Promise<{ id: string }>;
+  }
+) {
+  const params = await props.params;
   const meal = await getMealDetails(params.id);
 
   return (
