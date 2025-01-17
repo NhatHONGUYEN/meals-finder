@@ -10,7 +10,7 @@ import TestimonialItem from "./TestimonialItem";
 
 export default function Testimonials() {
   return (
-    <section className="py-32">
+    <section className="py-16 sm:py-24 lg:py-32">
       <div className="container">
         <Carousel className="w-80 sm:max-w-4xl md:w-3/4 md:mx-auto lg:w-full">
           <div className="mb-8 flex justify-between px-1 lg:mb-12">

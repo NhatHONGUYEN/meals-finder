@@ -16,7 +16,11 @@ export default function TestimonialItem({ testimonial }: TestimonialItemProps) {
         <q className="leading-7 text-foreground/70">{testimonial.content}</q>
         <div className="mt-6 flex gap-4 leading-5">
           <Avatar className="size-9 rounded-full ring-1 ring-input">
-            <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
+            <AvatarImage
+              loading="lazy"
+              src={testimonial.avatar}
+              alt={testimonial.name}
+            />
           </Avatar>
           <div className="text-sm">
             <p className="font-medium">{testimonial.name}</p>
