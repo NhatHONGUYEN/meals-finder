@@ -8,8 +8,8 @@ export default function ButtonBack() {
     <Link
       className="mb-5 flex items-center gap-1 text-muted-foreground hover:text-primary"
       href={"/"}
+      aria-label="Return to home page" // Ajout de l'aria-label pour améliorer l'accessibilité
     >
-      {" "}
       <ChevronLeft className="h-full w-4" /> Return to home
     </Link>
   );

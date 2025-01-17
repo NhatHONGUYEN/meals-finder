@@ -25,8 +25,10 @@ export default function PaginationPages({
           <PaginationItem key={pageNumber}>
             <PaginationLink
               className="cursor-pointer"
+              href="#"
               onClick={handlePageClick(pageNumber)}
               isActive={currentPage === pageNumber}
+              aria-label={`Go to page ${pageNumber}`} // Ajout de la description
             >
               {pageNumber}
             </PaginationLink>
