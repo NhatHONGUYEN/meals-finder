@@ -18,8 +18,8 @@ export default function Error() {
         <p className="text-2xl font-bold tracking-tight sm:text-4xl">
           No meals found.
         </p>
-        <p className="mt-4 text-gray-500">But you can try :</p>
-        <ul className="grid grid-cols-5 gap-5 mt-10 text-gray-500">
+        <p className="mt-6 text-xl  text-gray-500">But you can try :</p>
+        <ul className="grid mt-20 grid-cols-5 gap-5  text-gray-500">
           {suggestionError.map((suggestion, index) => (
             <li key={index}>{suggestion}</li>
           ))}

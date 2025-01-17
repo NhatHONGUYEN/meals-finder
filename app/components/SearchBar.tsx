@@ -24,20 +24,20 @@ export const SearchBar = ({
               <span className="mx-4 inline-flex items-center -space-x-4">
                 <Avatar className="size-11 border lg:size-16">
                   <AvatarImage
-                    src="https://shadcnblocks.com/images/block/avatar-1.webp"
-                    alt="placeholder"
+                    src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM5MzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzY3NzQ4NzA&ixlib=rb-4.0.3&q=80&w=400"
+                    alt="Burger"
                   />
                 </Avatar>
                 <Avatar className="size-11 border lg:size-16">
                   <AvatarImage
-                    src="https://shadcnblocks.com/images/block/avatar-6.webp"
-                    alt="placeholder"
+                    src="https://images.unsplash.com/photo-1513104890138-7c749659a591?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM5MzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzY3NzQ4NzA&ixlib=rb-4.0.3&q=80&w=400"
+                    alt="Pasta"
                   />
                 </Avatar>
                 <Avatar className="size-11 border lg:size-16">
                   <AvatarImage
-                    src="https://shadcnblocks.com/images/block/avatar-3.webp"
-                    alt="placeholder"
+                    src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM5MzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzY3NzQ4NzA&ixlib=rb-4.0.3&q=80&w=400"
+                    alt="Sushi"
                   />
                 </Avatar>
               </span>

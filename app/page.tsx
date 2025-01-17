@@ -14,6 +14,7 @@ import Hero from "./components/Hero";
 import { InfiniteSliderBasic } from "./components/InfiniteSliderBasic";
 import Testimonials from "./components/Testimonials";
 import LoadingDot from "@/components/ui/LoadingDot";
+import ErrorLoadingMeals from "./components/ErrorLoadingMeals";
 
 export default function Home() {
   const [query, setQuery] = useState(DEFAULT_QUERY);
@@ -47,7 +48,7 @@ export default function Home() {
   };
 
   if (isLoading) return <LoadingDot />;
-  if (isError) return <div>Error loading meals.</div>;
+  if (isError) return <ErrorLoadingMeals />;
 
   return (
     <div className="max-w-6xl mx-auto h-full flex flex-col items-center justify-center">
