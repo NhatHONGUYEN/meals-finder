@@ -1,6 +1,6 @@
 import ButtonBack from "@/components/ui/ButtonBack";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { VideoDialog } from "../../../../animations/VideoDialog";
+import { VideoDialog } from "../../../animations/VideoDialog";
 
 interface Meal {
   [key: string]: string;

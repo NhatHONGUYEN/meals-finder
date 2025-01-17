@@ -3,7 +3,7 @@
 import React, { useRef, useState } from "react";
 import { useMeals } from "./hooks/useMeals";
 
-import { MealGrid } from "./meal/MealGrid";
+import { MealGrid } from "./components/MealGrid";
 
 import {
   DEFAULT_QUERY,

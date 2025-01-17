@@ -1,34 +1,20 @@
-import { Metadata } from "next";
-import { getMealDetails } from "../../actions/getMealDetails.action";
-import MealPresentation from "./mealPresentation/MealPresentation";
-import Suggestions from "./suggestions/Suggestions";
+import Suggestions from "../../components/suggestions/Suggestions";
+import MealPresentation from "../../components/mealPresentation/MealPresentation";
 
-export const revalidate = 60;
+export default async function MealDetails({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
 
-// Générer des métadonnées dynamiques
-export async function generateMetadata(
-  props: {
-    params: Promise<{ id: string }>;
-  }
-): Promise<Metadata> {
-  const params = await props.params;
-  const meal = await getMealDetails(params.id);
+  // Récupération des données côté serveur
+  const response = await fetch(
+    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
+  );
+  const data = await response.json();
 
-  return {
-    title: meal.strMeal || "Détails du repas",
-    description:
-      meal.strInstructions.slice(0, 160) ||
-      "Découvrez les détails de ce repas délicieux.",
-  };
-}
-
-export default async function MealDetails(
-  props: {
-    params: Promise<{ id: string }>;
-  }
-) {
-  const params = await props.params;
-  const meal = await getMealDetails(params.id);
+  const meal = data.meals[0]; // Le détail du repas
 
   return (
     <section className="mx-8 max-w-6xl md:mx-32 xl:mx-auto py-32">

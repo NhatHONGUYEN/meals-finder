@@ -20,10 +20,10 @@ export default function HeroContent({ scrollToSearchBar }: HeroProps) {
       <p className="text-base/7 font-semibold text-indigo-600">
         Discover New Recipes
       </p>
-      <h1 className="my-6 text-pretty text-5xl font-bold">
+      <h1 className="my-6 text-pretty text-2xl md:text-5xl tracking-tight  font-bold">
         Welcome to Our Recipe Website
       </h1>
-      <p className="mb-8 text-muted-foreground">
+      <p className="mb-8 text-sm md:text-base text-muted-foreground">
         Explore a vast collection of delicious and easy-to-make recipes. Whether
         you&apos;re an experienced chef or a beginner in the kitchen,
         you&apos;ll find ideas here for all tastes and occasions.
