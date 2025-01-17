@@ -13,6 +13,7 @@ import {
 import Hero from "./components/Hero";
 import { InfiniteSliderBasic } from "./components/InfiniteSliderBasic";
 import Testimonials from "./components/Testimonials";
+import LoadingDot from "@/components/ui/LoadingDot";
 
 export default function Home() {
   const [query, setQuery] = useState(DEFAULT_QUERY);
@@ -45,7 +46,7 @@ export default function Home() {
     }
   };
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <LoadingDot />;
   if (isError) return <div>Error loading meals.</div>;
 
   return (
