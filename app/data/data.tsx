@@ -123,3 +123,8 @@ export const suggestionError = [
   "Breakfast",
   "Goat",
 ];
+
+export const navLinks = [
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+];
