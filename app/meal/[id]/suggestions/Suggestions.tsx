@@ -1,4 +1,4 @@
-import { Meals } from "../../../types/Meals";
+import { Meals } from "../../../../types/Meals";
 import MealCard from "./MealCard";
 
 export default async function Suggestions() {

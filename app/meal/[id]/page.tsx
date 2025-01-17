@@ -1,39 +1,35 @@
-"use client;";
-
+import { Metadata } from "next";
+import { getMealDetails } from "../../actions/getMealDetails.action";
 import MealPresentation from "./mealPresentation/MealPresentation";
 import Suggestions from "./suggestions/Suggestions";
 
 export const revalidate = 60;
 
-export async function generateStaticParams() {
-  const response = await fetch(
-    `https://www.themealdb.com/api/json/v1/1/search.php?f=a`
-  );
-  const data = await response.json();
+// Générer des métadonnées dynamiques
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string };
+}): Promise<Metadata> {
+  const meal = await getMealDetails(params.id);
 
-  const meals = data.meals || [];
-  return meals.map((meal: { idMeal: string }) => ({
-    id: meal.idMeal,
-  }));
+  return {
+    title: meal.strMeal || "Détails du repas",
+    description:
+      meal.strInstructions.slice(0, 160) ||
+      "Découvrez les détails de ce repas délicieux.",
+  };
 }
 
 export default async function MealDetails({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: { id: string };
 }) {
-  const { id } = await params;
-
-  // Récupération des données côté serveur
-  const response = await fetch(
-    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
-  );
-  const data = await response.json();
-
-  const meal = data.meals[0]; // Le détail du repas
+  const meal = await getMealDetails(params.id);
 
   return (
-    <section className="mx-8   max-w-6xl md:mx-32 xl:mx-auto py-32">
+    <section className="mx-8 max-w-6xl md:mx-32 xl:mx-auto py-32">
       <div className="container">
         <MealPresentation meal={meal} />
         <Suggestions />

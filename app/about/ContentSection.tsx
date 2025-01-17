@@ -1,5 +1,7 @@
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { CheckCircle } from "lucide-react";
+import { featuresData } from "../data/data";
+import { AVATAR_ALT_TEXT, AVATAR_IMAGE_URL } from "../constants/Constants";
 
 export default function ContentSection() {
   return (
@@ -10,20 +12,7 @@ export default function ContentSection() {
         detailed instructions, and tips to ensure your success every time.
       </p>
       <ul role="list" className="mt-8 max-w-xl space-y-8 text-gray-600">
-        {[
-          {
-            title: "Simple Recipes.",
-            description: "Easy-to-follow recipes with common ingredients.",
-          },
-          {
-            title: "Healthy Options.",
-            description: "Balanced and nutritious choices for a varied diet.",
-          },
-          {
-            title: "Gourmet Delights.",
-            description: "Savory dishes for every occasion.",
-          },
-        ].map((item, index) => (
+        {featuresData.map((item, index) => (
           <li key={index} className="flex gap-x-3">
             <CheckCircle
               aria-hidden="true"
@@ -60,10 +49,7 @@ export default function ContentSection() {
         </blockquote>
         <figcaption className="mt-6 flex gap-x-4">
           <Avatar className="size-7 rounded-full">
-            <AvatarImage
-              src="https://shadcnblocks.com/images/block/avatar-2.webp"
-              alt="Rémy Tran"
-            />
+            <AvatarImage src={AVATAR_IMAGE_URL} alt={AVATAR_ALT_TEXT} />
           </Avatar>
           <div className="text-sm/6">
             <strong className="font-semibold text-gray-900">Rémy Tran</strong> –

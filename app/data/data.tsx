@@ -132,3 +132,18 @@ export const navLinks = [
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
+
+export const featuresData = [
+  {
+    title: "Simple Recipes.",
+    description: "Easy-to-follow recipes with common ingredients.",
+  },
+  {
+    title: "Healthy Options.",
+    description: "Balanced and nutritious choices for a varied diet.",
+  },
+  {
+    title: "Gourmet Delights.",
+    description: "Savory dishes for every occasion.",
+  },
+];
