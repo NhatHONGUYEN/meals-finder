@@ -1,16 +1,30 @@
 import { Info } from "lucide-react";
 
+// Importation du chemin de la vidéo depuis une constante ou fichier de configuration
+const videoPath = "/aboutVideo.mp4"; // Il serait possible de gérer ce chemin dans un fichier de config ou avec un hook dynamique.
+
 export default function MediaSection() {
   return (
     <div className="mt-16">
       <figure>
         <video
-          src="/aboutVideo.mp4"
-          className="w-1/2 h-1/2 rounded-lg object-cover"
+          src={videoPath}
+          className="w-full max-w-2xl h-auto rounded-lg object-cover"
           autoPlay
           loop
           muted
-        ></video>
+          controls={false}
+          title="A selection of recipes for every taste"
+          aria-label="Watch a selection of recipes for every taste"
+        >
+          <track
+            kind="subtitles"
+            src="/path/to/your/subtitles_en.vtt" // Inclure des sous-titres pour améliorer l'accessibilité et le SEO
+            srcLang="en"
+            label="English Subtitles"
+          />
+          Sorry, your browser does not support the video tag.
+        </video>
         <figcaption className="mt-4 flex gap-x-2 text-sm/6 text-gray-500">
           <Info
             aria-hidden="true"

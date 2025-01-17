@@ -4,7 +4,7 @@ import { socialItems } from "../data/data";
 export default function Footer() {
   return (
     <footer className="bg-white">
-      <div className="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
+      <div className="mx-auto max-w-6xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
         <div className="flex justify-center gap-x-6 md:order-2">
           {socialItems.map((item) => (
             <Link
