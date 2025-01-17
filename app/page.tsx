@@ -3,8 +3,8 @@
 import React, { useRef, useState } from "react";
 import { useMeals } from "./hooks/useMeals";
 import { SearchBar } from "./components/SearchBar";
-import { MealGrid } from "./components/MealGrid";
-import { CustomPagination } from "./components/CustomPagination";
+import { MealGrid } from "./meal/MealGrid";
+import { CustomPagination } from "./components/pagination/CustomPagination";
 import {
   DEFAULT_QUERY,
   INITIAL_PAGE,
