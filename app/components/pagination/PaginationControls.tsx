@@ -18,7 +18,7 @@ export default function PaginationControls({
   isNext = false,
 }: PaginationControlsProps) {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
+    e.preventDefault(); // Empêche le rechargement de la page
     setPage((prev) =>
       isNext ? Math.min(prev + 1, totalPages) : Math.max(prev - 1, 1)
     );
@@ -26,18 +26,31 @@ export default function PaginationControls({
 
   const isDisabled = isNext ? currentPage === totalPages : currentPage === 1;
 
+  // Générer l'URL de la page suivante ou précédente
+  const href = isNext
+    ? `/page/${Math.min(currentPage + 1, totalPages)}`
+    : `/page/${Math.max(currentPage - 1, 1)}`;
+
   return (
     <PaginationItem>
       {isNext ? (
         <PaginationNext
+          href={href} // URL pour le SEO et les utilisateurs
           onClick={handleClick}
           className={isDisabled ? "disabled" : "cursor-pointer"}
-        />
+          aria-disabled={isDisabled} // Accessibilité
+        >
+          Next
+        </PaginationNext>
       ) : (
         <PaginationPrevious
+          href={href} // URL pour le SEO et les utilisateurs
           onClick={handleClick}
           className={isDisabled ? "disabled" : "cursor-pointer"}
-        />
+          aria-disabled={isDisabled} // Accessibilité
+        >
+          Previous
+        </PaginationPrevious>
       )}
     </PaginationItem>
   );
