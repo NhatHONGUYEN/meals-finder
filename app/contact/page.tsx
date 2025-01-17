@@ -42,8 +42,8 @@ const Contact = () => {
             <Image
               src="/photo-profil.jpg"
               alt="photo-profil"
-              width={400}
-              height={600}
+              width={350}
+              height={300}
               className="rounded-lg"
             />
           </div>

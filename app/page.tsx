@@ -51,25 +51,27 @@ export default function Home() {
   if (isError) return <ErrorLoadingMeals />;
 
   return (
-    <div className="max-w-6xl mx-auto h-full flex flex-col items-center justify-center">
-      {/* Affiche Hero uniquement si showHero est true */}
-      {showHero && <Hero scrollToSearchBar={scrollToSearchBar} />}
+    <div>
+      <div className="max-w-6xl mx-auto h-full flex flex-col items-center justify-center">
+        {/* Affiche Hero uniquement si showHero est true */}
+        {showHero && <Hero scrollToSearchBar={scrollToSearchBar} />}
 
-      <div ref={searchBarRef}>
-        <SearchBar
-          searchInput={searchInput}
-          setSearchInput={setSearchInput}
-          onSearch={handleSearch}
+        <div ref={searchBarRef}>
+          <SearchBar
+            searchInput={searchInput}
+            setSearchInput={setSearchInput}
+            onSearch={handleSearch}
+          />
+        </div>
+        <MealGrid currentPage={page} meals={meals} />
+        <CustomPagination
+          totalPages={totalPages}
+          currentPage={page}
+          setPage={handlePageChange} // Appelle handlePageChange pour gérer la pagination
         />
+        <InfiniteSliderBasic />
+        <Testimonials />
       </div>
-      <MealGrid meals={meals} />
-      <CustomPagination
-        totalPages={totalPages}
-        currentPage={page}
-        setPage={handlePageChange} // Appelle handlePageChange pour gérer la pagination
-      />
-      <InfiniteSliderBasic />
-      <Testimonials />
     </div>
   );
 }
