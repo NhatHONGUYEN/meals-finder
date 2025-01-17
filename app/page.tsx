@@ -10,11 +10,12 @@ import {
   INITIAL_PAGE,
   RESULTS_PER_PAGE,
 } from "./constants/Constants";
-import Hero from "./components/Hero";
+
 import { InfiniteSliderBasic } from "../animations/InfiniteSliderBasic";
 import Testimonials from "./components/Testimonials";
 import LoadingDot from "@/components/ui/LoadingDot";
 import ErrorLoadingMeals from "./components/error/ErrorLoadingMeals";
+import Hero from "./components/hero/Hero";
 
 export default function Home() {
   const [query, setQuery] = useState(DEFAULT_QUERY);
