@@ -1,17 +1,6 @@
-export default function Error() {
-  const suggestionError = [
-    "Beef",
-    "Chicken",
-    "Lamb",
-    "Pasta",
-    "Pork",
-    "Seafood",
-    "Vegan",
-    "Vegetarian",
-    "Breakfast",
-    "Goat",
-  ];
+import { suggestionError } from "../data/data";
 
+export default function Error() {
   return (
     <div className="grid place-content-center bg-white mt-20 px-4">
       <div className="text-center">

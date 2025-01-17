@@ -1,5 +1,6 @@
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { avatars } from "../data/data";
 
 export const SearchBar = ({
   searchInput,
@@ -15,31 +16,18 @@ export const SearchBar = ({
   };
 
   return (
-    <section className="pt-24 ">
+    <section className="pt-24">
       <div className="container">
         <div className="text-center">
-          <div className="text-3xl font-bold md:text-5xl ">
+          <div className="text-3xl font-bold md:text-5xl">
             <p className="flex flex-wrap items-center justify-center">
               Find your next meal
               <span className="mx-4 inline-flex items-center -space-x-4">
-                <Avatar className="size-11 border lg:size-16">
-                  <AvatarImage
-                    src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM5MzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzY3NzQ4NzA&ixlib=rb-4.0.3&q=80&w=400"
-                    alt="Burger"
-                  />
-                </Avatar>
-                <Avatar className="size-11 border lg:size-16">
-                  <AvatarImage
-                    src="https://images.unsplash.com/photo-1513104890138-7c749659a591?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM5MzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzY3NzQ4NzA&ixlib=rb-4.0.3&q=80&w=400"
-                    alt="Pasta"
-                  />
-                </Avatar>
-                <Avatar className="size-11 border lg:size-16">
-                  <AvatarImage
-                    src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM5MzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzY3NzQ4NzA&ixlib=rb-4.0.3&q=80&w=400"
-                    alt="Sushi"
-                  />
-                </Avatar>
+                {avatars.map((avatar, index) => (
+                  <Avatar key={index} className="size-11 border lg:size-16">
+                    <AvatarImage src={avatar.src} alt={avatar.alt} />
+                  </Avatar>
+                ))}
               </span>
               instantly.
             </p>

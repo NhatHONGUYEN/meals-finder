@@ -1,24 +1,7 @@
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
+import { dishes, sizes } from "../data/data";
 
 export function InfiniteSliderBasic() {
-  const dishes = [
-    "Spaghetti Carbonara",
-    "Chicken Tikka Masala",
-    "Sushi Rolls",
-    "Beef Wellington",
-    "Veggie Stir Fry",
-    "Tiramisu",
-  ];
-
-  const sizes = [
-    "text-xl",
-    "text-2xl",
-    "text-3xl",
-    "text-4xl",
-    "text-5xl",
-    "text-6xl",
-  ];
-
   const getRandomSize = () => {
     const randomIndex = Math.floor(Math.random() * sizes.length);
     return sizes[randomIndex];
