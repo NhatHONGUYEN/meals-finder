@@ -2,7 +2,7 @@
 
 import React, { useRef, useState } from "react";
 import { useMeals } from "./hooks/useMeals";
-import { SearchBar } from "./components/SearchBar";
+
 import { MealGrid } from "./meal/MealGrid";
 
 import {
@@ -17,6 +17,7 @@ import LoadingDot from "@/components/ui/LoadingDot";
 import ErrorLoadingMeals from "./components/error/ErrorLoadingMeals";
 import Hero from "./components/hero/Hero";
 import CustomPagination from "./components/pagination/CustomPagination";
+import SearchBar from "./components/SearchBar/SearchBar";
 
 export default function Home() {
   const [query, setQuery] = useState(DEFAULT_QUERY);
