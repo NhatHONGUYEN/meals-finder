@@ -1,13 +1,29 @@
-import { Meals } from "../../../../types/Meals";
+"use client";
+
+import { useQuery } from "@tanstack/react-query";
+import { Meals } from "../../../types/Meals";
 import MealCard from "./MealCard";
 
-export default async function Suggestions() {
+async function fetchSuggestions(): Promise<Meals[]> {
   const response = await fetch(
-    `https://www.themealdb.com/api/json/v1/1/search.php?s=Beef`
+    `https://www.themealdb.com/api/json/v1/1/search.php?s=Beef`,
+    { cache: "force-cache" }
   );
   const data = await response.json();
+  return data.meals || [];
+}
 
-  const meals = data.meals || [];
+export default function Suggestions() {
+  const { data: meals = [], isLoading } = useQuery({
+    queryKey: ["suggestions"],
+    queryFn: fetchSuggestions,
+    staleTime: 1000 * 60 * 5, // Cache les données pendant 5 minutes
+  });
+
+  if (isLoading) {
+    // Affichage pendant le chargement
+    return <p>Chargement des suggestions...</p>;
+  }
 
   return (
     <div className="w-full max-w-5xl mx-auto pt-20">
