@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function ContactDetails() {
   return (
     <div className="mx-auto w-fit lg:mx-0">
@@ -11,14 +13,14 @@ export default function ContactDetails() {
         </li>
         <li>
           <span className="font-bold">Email : </span>
-          <a
+          <Link
             href="https://mail.google.com/mail/?view=cm&fs=1&to=hnnhat67@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:underline"
           >
             hnnhat67@gmail.com
-          </a>
+          </Link>
         </li>
       </ul>
     </div>
