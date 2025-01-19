@@ -8,8 +8,8 @@ interface Meal {
   strArea: string;
   strInstructions: string;
   strMealThumb: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [key: string]: any; // Pour couvrir les autres propriétés
+
+  [key: string]: string; // Pour couvrir les autres propriétés
 }
 
 // Fonction utilitaire pour récupérer les détails d'un repas
@@ -27,7 +27,11 @@ async function getMeal(id: string): Promise<Meal | null> {
 }
 
 // Génération des métadonnées
-export async function generateMetadata({ params }: { params: { id: string } }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
   const { id } = await params;
   const meal = await getMeal(id);
 
@@ -48,7 +52,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 export default async function MealDetails({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
   const meal = await getMeal(id);
