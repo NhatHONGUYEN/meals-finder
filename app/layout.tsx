@@ -11,10 +11,10 @@ const dosis = Dosis({ subsets: ["latin"] });
 const bitter = Bitter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Meal Finder",
+  title: "Meals Finder",
   description: "Find the best recipes for your next meal.",
   openGraph: {
-    title: "Meal Finder",
+    title: "Meals Finder",
     description: "Find the best recipes for your next meal.",
     images: [
       {
