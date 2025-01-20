@@ -20,7 +20,7 @@ export const MealGrid: React.FC<MealGridProps> = ({ meals, currentPage }) => {
         <span className="relative z-10 bg-white px-6">{currentPage} </span>
       </span>
 
-      <div className="grid md:grid-cols-2 mx-20 xl:mx-0 xl:grid-cols-3 gap-20">
+      <div className="grid md:grid-cols-2 mx-8 xl:mx-0 xl:grid-cols-3 gap-20">
         {meals.map((meal) => (
           <article className="group" key={meal.idMeal}>
             <Link

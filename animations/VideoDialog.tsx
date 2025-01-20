@@ -19,18 +19,8 @@ function VideoDialog({ videoMeal }: { videoMeal: string }) {
 
   return (
     <div className="relative">
-      {/* Version light du modal */}
       <HeroVideoDialog
         className="dark:hidden block"
-        animationStyle="from-center"
-        videoSrc={videoEmbedUrl} // Utilisation de l'URL d'embed dynamique
-        thumbnailSrc={thumbnailUrl} // Utilisation de l'URL de la miniature dynamique
-        thumbnailAlt="Hero Video"
-      />
-
-      {/* Version dark du modal */}
-      <HeroVideoDialog
-        className="hidden dark:block"
         animationStyle="from-center"
         videoSrc={videoEmbedUrl} // Utilisation de l'URL d'embed dynamique
         thumbnailSrc={thumbnailUrl} // Utilisation de l'URL de la miniature dynamique
